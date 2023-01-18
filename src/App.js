@@ -125,18 +125,30 @@ function App() {
 
             <Scrollbars style={{ width: "100%", height: "20em" }}>
               <div className="todo-bottom">
-                <ul className='list-group d-flex flex-column m-auto  mb-5 w-75'>
-                  {list.map((e, i) => (
-                    <li className='list-group-item d-flex justify-content-between' key={e.id} >
-                      <div>
-                        <span>{i + 1}</span>
-                        &nbsp;&nbsp;
-                        <span>{e.name}</span>
-                      </div>
-                      <p className=' fs-4 d-flex align-content-center'><span className='view'><AiFillEye onClick={() => viewlist(e.id)} /> </span>  <span className='edit'><AiFillEdit onClick={() => editlist(e.id)} />  </span> <span className='delete'><AiTwotoneDelete onClick={() => deleteList(e.id)} /></span></p>
-                    </li>
-                  ))}
-                </ul>
+                {
+                  list.length < 1
+                    ?
+                    <ul>
+                      <li className='list-group-item rounded-2' >
+                        <div><h1 className='text-center'>Empty List!</h1></div>
+                      </li>
+                    </ul> :
+                    <ul className='list-group d-flex flex-column m-auto  mb-5 w-75'>
+                      {list.map((e, i) => (
+
+
+                        <li className='list-group-item d-flex justify-content-between rounded-2' key={e.id} >
+                          <div>
+                            <span>{i + 1}</span>
+                            &nbsp;&nbsp;
+                            <span>{e.name}</span>
+                          </div>
+                          <p className=' fs-4 d-flex align-content-center'><span className='view'><AiFillEye onClick={() => viewlist(e.id)} /> </span>  <span className='edit'><AiFillEdit onClick={() => editlist(e.id)} />  </span> <span className='delete'><AiTwotoneDelete onClick={() => deleteList(e.id)} /></span></p>
+                        </li>
+
+
+                      ))}
+                    </ul>}
               </div>
             </Scrollbars>
           </div>
