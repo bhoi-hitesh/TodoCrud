@@ -45,6 +45,7 @@ function App() {
       setIsEdit(null)
       setToggel(true)
     }
+    // creating id 
     else {
       let allData = { id: new Date().getTime().toString(), name: todo }
       setList([...list, allData])
@@ -79,7 +80,7 @@ function App() {
     setView(false)
   }
 
-
+  // setData to the localStorage
   useEffect(() => {
     localStorage.setItem("todoitems", JSON.stringify(list))
   }, [list])
