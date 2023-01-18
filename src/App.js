@@ -128,7 +128,7 @@ function App() {
                 {
                   list.length < 1
                     ?
-                    <ul>
+                    <ul className='list-group'>
                       <li className='list-group-item rounded-2' >
                         <div><h1 className='text-center'>Empty List!</h1></div>
                       </li>
